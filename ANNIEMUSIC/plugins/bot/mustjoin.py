@@ -6,7 +6,7 @@ from ANNIEMUSIC import app
 
 #--------------------------
 
-MUST_JOIN = "JARVIS_V_SUPPORT"
+MUST_JOIN = "THESUKOONLYRIC"
 #------------------------
 @app.on_message(filters.incoming & filters.private, group=-1)
 async def must_join_channel(app: Client, msg: Message):
@@ -16,7 +16,7 @@ async def must_join_channel(app: Client, msg: Message):
         try:
             await app.get_chat_member(MUST_JOIN, msg.from_user.id)
         except UserNotParticipant:
-            if MUST_JOIN.isalpha():
+            if MUST_JOIN.thesukoonlyric():
                 link = "https://t.me/" + MUST_JOIN
             else:
                 chat_info = await app.get_chat(MUST_JOIN)
